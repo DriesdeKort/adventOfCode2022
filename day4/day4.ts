@@ -55,14 +55,6 @@ function countFullyContains(list: number[][][]): number {
     return count;
 }
 
-
-/*
-
-    5-7,7-9 overlaps in a single section, 7.
-    2-8,3-7 overlaps all of the sections 3 through 7.
-    6-6,4-6 overlaps in a single section, 6.
-    2-6,4-8 overlaps in sections 4, 5, and 6.
-*/
 function countMutualOverlaps(list: number[][][]): number {
     let count = 0;
     list.forEach(pair => {
@@ -83,14 +75,11 @@ function countMutualOverlaps(list: number[][][]): number {
         x = secondPair[0];
         y = secondPair[1];
         if (x >= firstPair[0] && x <= firstPair[1]) {
-
             overlaps = true;
         }
         if (y >= firstPair[0] && y <= firstPair[1]) {
             overlaps = true;
-        }
-
-        
+        }        
         if (overlaps) {
             count++;
         } 
@@ -104,6 +93,6 @@ function countMutualOverlaps(list: number[][][]): number {
 let input1 = input('input.txt');
 let parsedInput = parseInput(input1);
 console.log(countFullyContains(parsedInput));
- console.log(countMutualOverlaps(parsedInput));
+console.log(countMutualOverlaps(parsedInput));
 
 

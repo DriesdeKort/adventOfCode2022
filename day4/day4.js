@@ -47,13 +47,6 @@ function countFullyContains(list) {
     });
     return count;
 }
-/*
-
-    5-7,7-9 overlaps in a single section, 7.
-    2-8,3-7 overlaps all of the sections 3 through 7.
-    6-6,4-6 overlaps in a single section, 6.
-    2-6,4-8 overlaps in sections 4, 5, and 6.
-*/
 function countMutualOverlaps(list) {
     var count = 0;
     list.forEach(function (pair) {
